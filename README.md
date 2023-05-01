@@ -1,1 +1,1 @@
-https://github.com/Nadya-Sereda.io/virtual-keyboard
+https://github.com/Nadya-Sereda.githubio/virtual-keyboard
