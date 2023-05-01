@@ -230,11 +230,11 @@ function changeLang() {
 
   if(changeLangKey.classList.contains('en')) {
         for (let i = 0; i < diffLang.en.length; i++) {
-      letter[i].innerHTML = diffLang.en[i];
+       letterChange[i].innerHTML = diffLang.en[i];
     }
   } else {
     for (let i = 0; i < diffLang.ru.length; i++) {
-      letter[i].innerHTML = diffLang.ru[i];
+       letterChange[i].innerHTML = diffLang.ru[i];
     }
   }
 };
