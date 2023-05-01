@@ -1,4 +1,8 @@
 const body = document.body;
+const diffLang = {
+  'en': ['~','q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ':', '"', 'z', 'x', 'c', 'v','b', 'n', 'm', '<', '>', '?'],
+  'ru': ['ё','й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'я', 'ч', 'с', 'м','и', 'т', 'ь', 'б', 'ю', '.']
+ };
 
 const keyboardContainer = document.createElement('div');
 keyboardContainer.className = 'wrapper-keyboard';
@@ -7,7 +11,7 @@ body.appendChild(keyboardContainer);
 const title = document.createElement('h1');
 title.className = 'keyboard-title';
 title.textContent = 'RSS Virtual Keyboard';
-title.title = 'The keyboard was created in the Windows operating system.\n To switch the language combination: left ctrl + alt.';
+title.title = 'The keyboard was created in the Windows operating system.\n To switch the language combination: Shift.';
 keyboardContainer.appendChild(title);
 
 const keyboardForm = document.createElement('div');
@@ -24,7 +28,7 @@ const keyboardItems = document.createElement('div');
 keyboardItems.className = 'keyboard-items';
 keyboardContainer.appendChild(keyboardItems);
 
-const createEl = (id, text, _class = 'item', tag = 'div', date) => {
+const createEl = (id, text, _class = 'item', tag = 'div') => {
   const el = document.createElement(tag)
   el.id = id;
   el.className = _class;
@@ -33,7 +37,7 @@ const createEl = (id, text, _class = 'item', tag = 'div', date) => {
   keyboardItems.appendChild(el);
 }
 
-createEl('ё', 'ё', 'item item_g4');
+createEl('ё', `ё`, 'item item_g4 letter');
 createEl('1', '1', 'item item_g4');
 createEl('2', '2', 'item item_g4');
 createEl('3', '3', 'item item_g4');
@@ -48,43 +52,43 @@ createEl('-', '-', 'item item_g4');
 createEl('+', '+', 'item item_g4');
 createEl('backspace', 'Backspace', 'item item_g9');
 createEl('tab', 'Tab', 'item item_g6');
-createEl('й', 'й', 'item item_g4');
-createEl('ц', 'ц', 'item item_g4');
-createEl('у', 'у', 'item item_g4');
-createEl('к', 'к', 'item item_g4');
-createEl('е', 'е', 'item item_g4');
-createEl('н', 'н', 'item item_g4');
-createEl('г', 'г', 'item item_g4');
-createEl('ш', 'ш', 'item item_g4');
-createEl('щ', 'щ', 'item item_g4');
-createEl('з', 'з', 'item item_g4');
-createEl('х', 'х', 'item item_g4');
-createEl('ъ', 'ъ', 'item item_g4');
+createEl('й', 'й', 'item item_g4 letter');
+createEl('ц', 'ц', 'item item_g4 letter');
+createEl('у', 'у', 'item item_g4 letter');
+createEl('к', 'к', 'item item_g4 letter');
+createEl('е', 'е', 'item item_g4 letter');
+createEl('н', 'н', 'item item_g4 letter');
+createEl('г', 'г', 'item item_g4 letter');
+createEl('ш', 'ш', 'item item_g4 letter');
+createEl('щ', 'щ', 'item item_g4 letter');
+createEl('з', 'з', 'item item_g4 letter');
+createEl('х', 'х', 'item item_g4 letter');
+createEl('ъ', 'ъ', 'item item_g4 letter');
 createEl('delete', 'Del', 'item item_g6');
 createEl('capslock', 'Caps Lock', 'item item_g9');
-createEl('ф', 'ф', 'item item_g4');
-createEl('ы', 'ы', 'item item_g4');
-createEl('в', 'в', 'item item_g4');
-createEl('а', 'а', 'item item_g4');
-createEl('п', 'п', 'item item_g4');
-createEl('р', 'р', 'item item_g4');
-createEl('о', 'о', 'item item_g4');
-createEl('л', 'л', 'item item_g4');
-createEl('д', 'д', 'item item_g4');
-createEl('ж', 'ж', 'item item_g4');
-createEl('э', 'э', 'item item_g4');
+createEl('ф', 'ф', 'item item_g4 letter');
+createEl('ы', 'ы', 'item item_g4 letter');
+createEl('в', 'в', 'item item_g4 letter');
+createEl('а', 'а', 'item item_g4 letter');
+createEl('п', 'п', 'item item_g4 letter');
+createEl('р', 'р', 'item item_g4 letter');
+createEl('о', 'о', 'item item_g4 letter');
+createEl('л', 'л', 'item item_g4 letter');
+createEl('д', 'д', 'item item_g4 letter');
+createEl('ж', 'ж', 'item item_g4 letter');
+createEl('э', 'э', 'item item_g4 letter');
 createEl('enter', 'Enter', 'item item_g9');
 createEl('shift', 'Shift', 'item item_g9');
-createEl('я', 'я', 'item item_g4');
-createEl('ч', 'ч', 'item item_g4');
-createEl('с', 'с', 'item item_g4');
-createEl('м', 'м', 'item item_g4');
-createEl('и', 'и', 'item item_g4');
-createEl('т', 'т', 'item item_g4');
-createEl('ь', 'ь', 'item item_g4');
-createEl('б', 'б', 'item item_g4');
-createEl('ю', 'ю', 'item item_g4');
-createEl('.', '.', 'item item_g4');
+createEl('я', 'я', 'item item_g4 letter');
+createEl('ч', 'ч', 'item item_g4 letter');
+createEl('с', 'с', 'item item_g4 letter');
+createEl('м', 'м', 'item item_g4 letter');
+createEl('и', 'и', 'item item_g4 letter');
+createEl('т', 'т', 'item item_g4 letter');
+createEl('ь', 'ь', 'item item_g4 letter');
+createEl('б', 'б', 'item item_g4 letter');
+createEl('ю', 'ю', 'item item_g4 letter');
+createEl('.', '.', 'item item_g4 letter');
 createEl('arrowup', '\u25B2', 'item item_g4');
 createEl('shift', 'Shift', 'item item_g9');
 createEl('control', 'Ctrl', 'item item_g5');
@@ -102,20 +106,14 @@ const input = document.querySelector('textarea').focus();
 var capslock = false;
 const keys = document.querySelectorAll('.item');
 
-//const arr = Array(keys.innerHTML.toUpperCase());
-//let a = Array(2);
-//console.log(arr); 
-
 letters.addEventListener('click', function (event) {
-      keys.forEach((item) => {
-        item.classList.remove('pressed');
-      });
-      keys.forEach(item => {
-        if (event.target == item) {
+  console.log(event.target);
+  keys.forEach((item) => {
+    item.classList.remove('pressed');
+    if (event.target == item) {
       let letter = event.target.innerText;
      
-     
-        if (letter === 'Caps Lock') {
+       if (letter === 'Caps Lock') {
           letter = 'capslock'; 
         } else if (letter === 'Enter') {
           formInput.value += '\n';
@@ -123,6 +121,7 @@ letters.addEventListener('click', function (event) {
           if (formInput.value === '') return;
           formInput.value = formInput.value.slice(0, -1);
         } else if (letter === ' ') {
+		  letter = 'space';
           formInput.value += ' ';
         } else if (letter === 'Tab') {
           formInput.value += '\t';
@@ -132,18 +131,41 @@ letters.addEventListener('click', function (event) {
           letter = 'delete';
           formInput.value = '';
         }
+		else if (letter === 'Shift') {
+		  formInput.value;
+		}
+		else if (letter === 'Alt') {
+		  formInput.value;
+		}
+		else if (letter === '\u25BA') {
+		  letter = 'arrowright';
+		  formInput.value;
+		}
+		else if (letter === '\u25BC') {
+		  letter = 'arrowdown';
+		  formInput.value;
+		}
+		else if (letter === '\u25C4') {
+		  letter = 'arrowleft';
+		  formInput.value;
+		}
+		else if (letter === '\u25B2') {
+		  letter = 'arrowup';
+		  formInput.value;
+		}
+		else if (letter === 'Win') {
+		  formInput.value;
+		letter = 'meta'; 
+		}
         else {
           formInput.value += letter;
         };
-      
-      //console.log(letter);
-      let id = [letter.toLowerCase()];
-      letterId  = document.getElementById(id);
-      letterId.classList.add('pressed')
+        
+      event.target.classList.add('pressed'); 
     }
   });
 });
- 
+
 init ();
 
 function init() {
@@ -157,19 +179,62 @@ function keydownHandler(event) {
   item.classList.remove('pressed');
   });
   let key = event.key.toLowerCase();
-  console.log(key);
   letterKey  = document.getElementById(key);
   letterKey.classList.add('pressed');
 }
+
 function keyupHandler(event) {
-  let key = event.key.toLowerCase();
+  let key = event.key;
 
   letterKey  = document.getElementById(key);
   letterKey.classList.remove('pressed');
+
 }
 };
 
+// Переключение на заглавные буквы:
 
-  const upp = document.querySelector('.item');
+const letterChange = document.querySelectorAll('.letter');
+const capsLockKey = document.getElementById('capslock');
+let flagUp = 0;
 
-  console.log(upp.textContent.toUpperCase());
+capsLockKey.addEventListener('click', () => {
+  if (flagUp == 0) {
+    includesUpperCase();
+  } else {
+    includesLowerCase();
+  }
+});
+
+function includesUpperCase() {
+  letterChange.forEach(element => {
+    element.innerHTML = element.innerHTML.toUpperCase();
+    flagUp = 1;
+  });
+}
+
+function includesLowerCase() {
+  letterChange.forEach(element => {
+    element.innerHTML = element.innerHTML.toLowerCase();
+    flagUp = 0;
+  });
+}
+
+//замена на английский язык:
+
+const changeLangKey = document.querySelector('#shift');
+changeLangKey.addEventListener('click', changeLang);
+
+function changeLang() {
+   changeLangKey.classList.toggle('en');
+
+  if(changeLangKey.classList.contains('en')) {
+        for (let i = 0; i < diffLang.en.length; i++) {
+      letter[i].innerHTML = diffLang.en[i];
+    }
+  } else {
+    for (let i = 0; i < diffLang.ru.length; i++) {
+      letter[i].innerHTML = diffLang.ru[i];
+    }
+  }
+};
